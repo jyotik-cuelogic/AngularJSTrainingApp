@@ -1,0 +1,8 @@
+﻿
+<div>
+    User Name :<input type="text" name="username" ng-model="username" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />{{username}}<br /><br />
+    Password :<input type="password" name="userpassword" ng-model="password" required /><br />
+    <input type="submit" name="submit" ng-click="authenticate();" value="Login" />
+</div>
+
+

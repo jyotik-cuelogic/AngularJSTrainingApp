@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="tandem" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
+    <link rel="stylesheet" href="app/app.css">
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>-->
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#/users">Users</a></li>
+        <li><a href="#/login">login</a></li>
+    </ul>
+
+    <div ng-view></div>
+    
+    <div>Angular seed app: v<span app-version></span></div>
+  
+    <!-- Common files to be loaded first -->
+    <script src="app/common/provider/userDetails.js"></script>
+    <script src="app/common/provider/employeeDetails.js"></script>
+    <script src="app/common/directives/index.js"></script>
+    <script src="app/common/services/localstoragemanager.js"></script>
+    <script src="app/common/services/user.js"></script>
+    <script src="app/common/services/login.js"></script>
+    <script src="app/common/services/index.js"></script>
+
+    <!-- User module -->
+    <script src="app/user/user.controller.js"></script>
+    <script src="app/user/user.route.js"></script>
+    <script src="app/user/index.js"></script>
+
+    <!-- login module -->
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/login.route.js"></script>
+    <script src="app/login/index.js"></script>
+
+    <!-- home module -->
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/home/home.route.js"></script>
+    <script src="app/home/index.js"></script>
+
+    <!-- Main module -->
+    <script src="app/app.js"></script>
+
+</body>
+</html>
