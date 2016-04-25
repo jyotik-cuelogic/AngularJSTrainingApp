@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\home\views\editEmployee.html" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="bower.json" />

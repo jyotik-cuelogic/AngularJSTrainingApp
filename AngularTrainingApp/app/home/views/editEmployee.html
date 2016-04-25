@@ -1,0 +1,12 @@
+﻿
+<div>
+    Name :<br />
+    <input type="text" ng-model="Name" value="{{home.Name}}" required /><br />
+    Email :<br />
+    <input type="text" ng-model="Email" value="{{home.email}}" required /><br />
+    Age :<br />
+    <input type="number" ng-model="Age" value="{{home.Age}}" required /><br />
+    Gender :<br />
+    <input type="text" ng-model="Gender" value="{{home.Gender}}" required /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="add(home.Name,home.email,home.Age,home.Gender);" value="Submit" name="Submit" />
+</div>

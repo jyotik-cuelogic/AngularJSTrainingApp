@@ -6,5 +6,11 @@
             controller: 'homeCtrl',
             controllerAs: 'home'
         });
+        $routeProvider.when('/home/editEmployee', {
+            templateUrl: 'app/home/views/editEmployee.html',
+            controller: 'homeCtrl',
+            controllerAs: 'home'
+        });
+
     }]);
 })();

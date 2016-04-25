@@ -1,3 +1,48 @@
 ﻿<div>
     <font color="red"> <h3>Hello  {{home.Name}}</h3></font>
 </div>
+<br />
+<br />
+<center>
+    <table>
+        <tr>
+            <td align="left">
+                <a style="color:blue" href="#/home/edit">Add Employee</a>
+            </td>
+            <td align="right">
+                Sort By :
+                <select ng-model="sortKey">
+                    <option ng-selected="true">Name</option>
+                    <option>Email</option>
+                    <option>Age</option>
+                    <option>Gender</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+
+                <table style="width:auto" class="table table-hover table-bordred table-striped">
+                    <thead>
+                        <tr class="info">
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>--</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="pointer:hand" class="success" ng-repeat="emp in home.Employees | orderBy: sortKey" ng-click="editEmployee(emp.email);">
+                            <td ng-model="Name">{{emp.Name }}</td>
+                            <td ng-model="email">{{emp.email}}</td>
+                            <td ng-model="Age">{{emp.Age}}</td>
+                            <td ng-model="Gender">{{emp.Gender}}</td>
+                            <td><a ng-click="delete(emp.email);" href="#/home">delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</center>
