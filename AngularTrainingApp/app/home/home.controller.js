@@ -5,10 +5,6 @@
         .controller('homeCtrl', ['$scope', 'loginservice', '$location', homecontroller]);
 
     function homecontroller($scope, loginservice, $location) {
-        $scope.Name = '';
-        $scope.Email = '';
-        $scope.Age = '';
-        $scope.Gender = '';
 
         this.Name = loginservice.GetUserDetails("myname");
 
@@ -20,20 +16,43 @@
             }
         };
 
-        $scope.add = function (Name, Email, Age, Gender) {
-            alert();
+        $scope.addoredit = function (email) {
             var data = loginservice.GetEmployeeList();
-            alert($scope.Name);
-            data.push({ Name: $scope.Name, email: $scope.Email, Age: $scope.Age, Gender: $scope.Gender });
-            this.Employees = data;
-            $scope.refresh();
+            var Retval = {};
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].email == email) {
+                    data[i].email = $scope.email;
+                    data[i].Name = $scope.Name;
+                    data[i].Age = $scope.Age;
+                    data[i].Gender = $scope.Gender;
+                    Retval = "Exists";
+                    this.Employees = data;
+                }
+                else { Retval = "NotExists"; }
+            }
+            if (Retval == "NotExists") {
+                data.push({ Name: $scope.Name, email: $scope.Email, Age: $scope.Age, Gender: $scope.Gender });
+                this.Employees = data;
+            }
+            $location.path("/home");
+            $scope.refresh;
         }
 
         $scope.editEmployee = function (email) {
-            alert('Hi');
-            $location.path("#/home/editEmployee");
+            this.Employees = loginservice.GetEmployeeList();
+            var Result = this.Employees.find(function (row) {
+                return row.email === email;
+            });
+
+            if (Result) {
+                $scope.set = function () {
+                    $scope.email = Result[0].email;
+                    $scope.Name = Result[0].Name;
+                    $scope.Age = Result[0].Age;
+                    $scope.Gender = Result[0].Gender;
+                }
+            }
+            $location.path("/home/editEmployee");
         };
-
-
     };
 })();

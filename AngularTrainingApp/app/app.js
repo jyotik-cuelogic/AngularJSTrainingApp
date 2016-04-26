@@ -7,6 +7,6 @@ angular.module('tandem', [
   'login',
   'home'
 ]).
-config(['$routeProvider', function ($routeProvider) {
+config(['$routeProvider',function ($routeProvider, $locationProvider) {
     $routeProvider.otherwise({ redirectTo: '/login' });
 }]);
