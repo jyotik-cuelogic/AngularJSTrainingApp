@@ -1,34 +1,45 @@
-﻿<center>
-    <table ng-init="set();">
-        <tr>
-            <td>
-                Name :<br />
-                <input type="text" ng-model="Name" init-from-form required />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Email :<br />
-                <input type="text" ng-model="email" init-from-form required /><br />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Age :<br />
-                <input type="text" ng-model="Age" init-from-form required />
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Gender :<br />
-                <input type="text" ng-model="Gender" init-from-form required /><br /><br />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" ng-click="addoredit(email);" value="Submit" name="Submit" />
-            </td>
-        </tr>
-    </table>
-</center>
+﻿<form name="AddEmployee">
+    <center>
+        <table ng-init="setValues();" width="200">
+            <tr>
+                <td width="100">
+                    Name :<br />
+                    <input type="text" name="username" ng-model="Name" ng-minlength="2"
+                           ng-maxlength="15" required />
+                </td>
+                <td valign="bottom"><p ng-show="AddEmployee.username.$error.required">*</p></td>
+            </tr>
+            <tr>
+                <td width="100">
+                    Email :<br />
+                    <input type="text" name="email" ng-model="Email" ng-minlength="8"
+                           ng-maxlength="16" required />
+                </td>
+                <td valign="bottom"><p ng-show="AddEmployee.email.$error.required">*</p></td>
+            </tr>
+            <tr>
+                <td width="100">
+                    Age :<br />
+                    <input type="text" name="age" ng-model="Age" ng-minlength="2"
+                           ng-maxlength="15" required />
+                </td>
+                <td valign="bottom"><p ng-show="AddEmployee.age.$error.required">*</p></td>
+            </tr>
+            <tr>
+                <td width="100">
+                    Gender :<br />
+                    <input type="text" name="gender" ng-model="Gender" ng-minlength="1"
+                           ng-maxlength="6" required />
+                </td>
+                <td valign="bottom"><p ng-show="AddEmployee.gender.$error.required">*</p></td>
+            </tr>
+            <tr>
+                <td width="100">
+                    <br />
+                    <input type="submit" ng-click="addoredit(Email);" value="Submit" name="Submit" />
+                    <input type="button" ng-click="cancel();" value="Cancel" name="Cancel" />
+                </td>
+            </tr>
+        </table>
+    </center>
+</form>

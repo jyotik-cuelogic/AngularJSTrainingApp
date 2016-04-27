@@ -33,12 +33,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="cursor:pointer" class="success" ng-repeat="emp in home.Employees | orderBy: sortKey" ng-click="editEmployee(emp.email);">
+                        <tr style="cursor:pointer" class="success" ng-repeat="emp in home.Employees | orderBy: sortKey" ng-click="editEmployee(emp.Email);">
                             <td ng-model="Name" ng-bind="emp.Name">{{emp.Name}}</td>
-                            <td ng-model="Email" ng-bind="emp.email">{{emp.email}}</td>
+                            <td ng-model="Email" ng-bind="emp.Email">{{emp.Email}}</td>
                             <td ng-model="Age" ng-bind="emp.Age">{{emp.Age}}</td>
                             <td ng-model="Gender" ng-bind="emp.Gender">{{emp.Gender}}</td>
-                            <td><a ng-click="delete(emp.email);" href="#/home">delete</a></td>
+                            <td><a ng-click="delete(emp.Email);" href="#/home">delete</a></td>
                         </tr>
                     </tbody>
                 </table>

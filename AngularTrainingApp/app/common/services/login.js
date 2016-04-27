@@ -10,16 +10,16 @@
 
         function isValid(credentials) {
             for (var i = 0; i < userData.length; i++) {
-                if (userData[i].email == credentials.username && userData[i].pass == credentials.password) {
-                    return GetEmployeeDetails(userData[i].email);
+                if (userData[i].Email == credentials.username && userData[i].pass == credentials.password) {
+                    return GetEmployeeDetails(userData[i].Email);
                 }
             }
             return "";
         };
 
-        function GetEmployeeDetails(email) {
+        function GetEmployeeDetails(Email) {
             for (var i = 0; i < employeeData.length; i++) {
-                if (employeeData[i].email == email)
+                if (employeeData[i].Email == Email)
                     return employeeData[i].Name;
             }
             return "";
@@ -41,18 +41,13 @@
             return isValid(credentials);
         }
 
-        this.deleteEmployee = function (email) {
+        this.deleteEmployee = function (Email) {
             for (var i = 0; i < employeeData.length; i++) {
-                if (employeeData[i].email == email) {
+                if (employeeData[i].Email == Email) {
                     employeeData.splice(i, 1);
                     $scope.refresh();
                 }
             }
         };
-
-        this.addEmployee = function (email, name, age, gender) {
-            employeeData.push({ Name: name, email: email, Age: age, Gender: gender });
-        };
-
     };
 })();

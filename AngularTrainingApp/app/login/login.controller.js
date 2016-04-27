@@ -10,9 +10,8 @@
         $scope.authenticate = function () {
             credentials.username = $scope.username;
             credentials.password = $scope.password;
-            
             var Name = loginservice.authenticate(credentials);
-             
+
             if (Name != "") {
                 $location.path("/home");
                 loginservice.SaveUserDetails(Name)

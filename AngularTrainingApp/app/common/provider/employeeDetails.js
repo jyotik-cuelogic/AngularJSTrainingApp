@@ -30,11 +30,11 @@
 
     providerApp.config(function (employeeDetailsProvider) {
         var employeeDetails = [
-                        { email: 'jyoti.kumbhar@cuelogic.co.in', Name: 'Jyoti Kumbhar', Age: '27', Gender: 'Female' },
-                        { email: 'jk@cuelogic.co.in', Name: 'JK', Age: '28', Gender: 'Male' },
-                        { email: 'user1@cuelogic.co.in', Name: 'User1', Age: '30', Gender: 'Male' },
-                        { email: 'jyoti@cuelogic.co.in', Name: 'Jyoti', Age: '25', Gender: 'Female' },
-                        { email: 'user2@cuelogic.co.in', Name: 'User2', Age: '35', Gender: 'Male' }];
+                        { Email: 'jyoti.kumbhar@cuelogic.co.in', Name: 'Jyoti Kumbhar', Age: '27', Gender: 'Female' },
+                        { Email: 'jk@cuelogic.co.in', Name: 'JK', Age: '28', Gender: 'Male' },
+                        { Email: 'user1@cuelogic.co.in', Name: 'User1', Age: '30', Gender: 'Male' },
+                        { Email: 'jyoti@cuelogic.co.in', Name: 'Jyoti', Age: '25', Gender: 'Female' },
+                        { Email: 'user2@cuelogic.co.in', Name: 'User2', Age: '35', Gender: 'Male' }];
 
         employeeDetailsProvider.set(employeeDetails);
     });

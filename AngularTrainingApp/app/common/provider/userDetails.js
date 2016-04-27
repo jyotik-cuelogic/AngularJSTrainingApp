@@ -18,11 +18,11 @@
 
     providerApp.config(function(userDetailsProvider) {
         var userList = [
-                        { email: 'jyoti.kumbhar@cuelogic.co.in', pass: 'jyoti123' },
-                        { email: 'jk@cuelogic.co.in', pass: 'jk123' },
-                        { email: 'user1@cuelogic.co.in', pass: 'user123' },
-                        { email: 'jyoti', pass: '123' },
-                        { email: '1', pass: '11' }
+                        { Email: 'jyoti.kumbhar@cuelogic.co.in', pass: 'jyoti123' },
+                        { Email: 'jk@cuelogic.co.in', pass: 'jk123' },
+                        { Email: 'user1@cuelogic.co.in', pass: 'user123' },
+                        { Email: 'jyoti', pass: '123' },
+                        { Email: '1', pass: '11' }
         ];
         userDetailsProvider.set(userList);
     });
