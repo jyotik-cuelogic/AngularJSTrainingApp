@@ -1,43 +1,53 @@
-﻿<form name="AddEmployee">
+﻿<form name="AddEmployee" novalidate>
     <center>
-        <table ng-init="setValues();" width="200">
+        <br />
+        <br />
+        <table ng-init="setValues();">
             <tr>
-                <td width="100">
-                    Name :<br />
-                    <input type="text" name="username" ng-model="Name" ng-minlength="2"
+                <td>
+                    <b> Name :</b>  <br />
+                    <input type="text" name="username" ng-model="Name"
                            ng-maxlength="15" required />
+                    <label ng-show="AddEmployee.username.$invalid">*</label>
                 </td>
-                <td valign="bottom"><p ng-show="AddEmployee.username.$error.required">*</p></td>
             </tr>
             <tr>
-                <td width="100">
-                    Email :<br />
-                    <input type="text" name="email" ng-model="Email" ng-minlength="8"
+                <td>
+                    <b>Email :</b>   <br />
+                    <input class="error" type="email" name="emailAdd" ng-model="Email" ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+.[a-z0-9-]/" placeholder="Email" ng-minlength="8"
                            ng-maxlength="16" required />
+                    <label ng-show="AddEmployee.emailAdd.$invalid" ng-hide="isValid">*</label>
+                    <label style="color:red; font-weight:bold;" ng-hide="isValid" ng-show="AddEmployee.emailAdd.$invalid">
+                        ERROR. Invalid email.
+                    </label>
                 </td>
-                <td valign="bottom"><p ng-show="AddEmployee.email.$error.required">*</p></td>
             </tr>
             <tr>
-                <td width="100">
-                    Age :<br />
-                    <input type="text" name="age" ng-model="Age" ng-minlength="2"
+                <td>
+                    <b>Age :</b>   <br />
+                    <input type="number" name="ageN" ng-model="Age" ng-minlength="2"
                            ng-maxlength="15" required />
+                    <label ng-show="AddEmployee.ageN.$invalid">*</label>
                 </td>
-                <td valign="bottom"><p ng-show="AddEmployee.age.$error.required">*</p></td>
+
             </tr>
             <tr>
-                <td width="100">
-                    Gender :<br />
-                    <input type="text" name="gender" ng-model="Gender" ng-minlength="1"
-                           ng-maxlength="6" required />
+                <td>
+                    <b>Gender :</b>  <br />
+                    <label><input type="radio" ng-model='Gender' ng-value='"Female"' name="rdoGender">Female</label>
+                    &nbsp;&nbsp;
+                    <label>
+                        <input type="radio" ng-model='Gender' ng-value='"Male"' name="rdoGender">Male
+                    </label>
+                    <label ng-show="AddEmployee.rdoGender.$invalid">*</label>
                 </td>
-                <td valign="bottom"><p ng-show="AddEmployee.gender.$error.required">*</p></td>
+
             </tr>
             <tr>
-                <td width="100">
+                <td>
                     <br />
                     <input type="submit" ng-click="addoredit(Email);" value="Submit" name="Submit" />
-                    <!--<input type="button" ng-click="cancel();" value="Cancel" name="Cancel" />-->
+                    <input type="button" ng-click="cancel();" value="Cancel" name="Cancel" />
                 </td>
             </tr>
         </table>

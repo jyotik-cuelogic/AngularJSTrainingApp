@@ -1,13 +1,22 @@
-﻿<div>
-    <font color="red"> <h3>Hello  {{home.Name}}</h3></font>
+﻿
+<div>
+    <table width="1000">
+        <tr>
+            <td>
+                <font color="red"> <h3>Hello  {{home.Name}}</h3></font>
+            </td>
+            <td valign="middle" align="right">&nbsp;&nbsp;<a style="color:deepskyblue" href="#/login" ng-click="logout();">Logout</a></td>
+        </tr>
+    </table>
 </div>
+<hr />
 <br />
 <br />
 <center>
     <table>
         <tr>
             <td align="left">
-                <a style="color:blue" href="#/home/edit">Add Employee</a>
+                <a style="color:blue" href="#/home/add" ng-click="add();">Add Employee</a>
             </td>
             <td align="right">
                 Sort By :
